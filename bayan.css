@@ -1,0 +1,16 @@
+.bayan {
+  background: #eee;
+}
+.pane {
+  border: 1px solid gray;
+  padding: 2px 5px;
+}
+.header {
+  font-weight: bold;
+}
+.body {
+  display: none;
+}
+.open .body {
+  display: block;
+}
