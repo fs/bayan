@@ -1,7 +1,11 @@
-function hiParents() {
-  console.log('hi mom');
-  console.log('hi dad');
-}
+$(document).ready(function() {
 
-hiParents();
-hiParents();
+  $(".pane").click(function() {
+    $('.pane').removeClass('open');
+    $(this).addClass('open');
+
+    var count = parseInt( $(this).find('.counter').text() );
+    $(this).find('.counter').text(count + 1);
+  });
+
+});

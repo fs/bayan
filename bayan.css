@@ -7,10 +7,18 @@
 }
 .header {
   font-weight: bold;
+  background-color: white;
 }
+
 .body {
-  display: none;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 500ms linear 0;
 }
 .open .body {
-  display: block;
+  max-height: 100%;
+}
+
+.counter {
+  color: blue;
 }
