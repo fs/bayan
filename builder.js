@@ -1,7 +1,8 @@
 function start() {
   console.log('start');
 
-  $('.button').click(buttonClicked);
+  $('.builder .buttons .button').click(buttonClicked);
+  $('.builder .fields .close').click(closeClicked);
 }
 
 function buttonClicked() {
@@ -11,7 +12,14 @@ function buttonClicked() {
 
   var fieldId = button.attr('data-field');
 
-  $('#user_' + fieldId).addClass('on');
+  $('.builder .fields #user_' + fieldId).addClass('on');
 }
 
-$(document).ready(start);
+function closeClicked() {
+  var field = $(this).parent();
+  var fieldId = field.attr('id').replace('user_', '');
+  var button = $('.builder .buttons .button[data-field="'+fieldId+'"]');
+
+  field.removeClass('on');
+  button.removeClass('on');
+}
