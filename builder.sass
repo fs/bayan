@@ -13,11 +13,17 @@ div
     .button
       float: left
       outline: 1px solid gray
-    .button.on
-      font-weight: bold
+      &:hover
+        color: red
+      &.on
+        font-weight: bold
+        color: blue
 
-.field .close
-  float: right
-
-.fields .field
-  outline: 1px solid gray
+  .fields
+    .field
+      outline: 1px solid gray
+      display: none
+      &.on
+        display: block
+      .close
+        float: right

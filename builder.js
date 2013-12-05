@@ -1,5 +1,17 @@
-function makeBold() {
-  $('.button').addClass('on');
+function start() {
+  console.log('start');
+
+  $('.button').click(buttonClicked);
 }
 
-$(document).ready(makeBold);
+function buttonClicked() {
+  var button = $(this);
+
+  button.addClass('on');
+
+  var fieldId = button.attr('data-field');
+
+  $('#user_' + fieldId).addClass('on');
+}
+
+$(document).ready(start);

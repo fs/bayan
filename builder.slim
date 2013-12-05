@@ -9,18 +9,19 @@ html
   body
     .builder
       .buttons
-        .button First button
-        .button.on Second button
-        .button Third button
+        .button data-field="name" name
+        .button.on data-field="age" age
+        .button data-field="gender" gender
+
       .fields
-        .field
-          ' first field
+        #user_name.field
+          ' user name
           .close &times;
-        .field
-          ' second field
+        #user_age.field.on
+          ' user age
           .close &times;
-        .field
-          ' third field
+        #user_gender.field
+          ' user gender
           .close &times;
 
 

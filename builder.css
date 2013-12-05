@@ -14,14 +14,20 @@ div {
   float: left;
   outline: 1px solid gray;
 }
+.builder .buttons .button:hover {
+  color: red;
+}
 .builder .buttons .button.on {
   font-weight: bold;
+  color: blue;
 }
-
-.field .close {
-  float: right;
-}
-
-.fields .field {
+.builder .fields .field {
   outline: 1px solid gray;
+  display: none;
+}
+.builder .fields .field.on {
+  display: block;
+}
+.builder .fields .field .close {
+  float: right;
 }
