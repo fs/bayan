@@ -1,1 +1,1 @@
-$(document).ready(start);
+$(document).ready(formBuilder.start);
