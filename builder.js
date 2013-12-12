@@ -1,27 +1,44 @@
 var formBuilder = {
-  start: function() {
-    console.log('start');
+  start: function(element) {
+    console.log('start ' + element[0].className);
 
-    $('.builder .buttons .button').click(formBuilder.buttonClicked);
-    $('.builder .fields .close').click(formBuilder.closeClicked);
+    element.find('.buttons .button').click(function() {
+
+      var button = $(this);
+      formBuilder.buttonClicked(element, button);
+
+    });
+
+    element.find('.fields .close').click( formBuilder.closeClicked );
   },
 
-  buttonClicked: function() {
-    var button = $(this);
-
+  buttonClicked: function(element, button) {
     button.addClass('on');
 
-    var fieldId = button.attr('data-field');
+    var fieldName = button.data('field');
+    var field = formBuilder._getFieldByName(element, fieldName);
 
-    $('.builder .fields #user_' + fieldId).addClass('on');
+    field.addClass('on');
   },
 
   closeClicked: function() {
     var field = $(this).parent();
-    var fieldId = field.attr('id').replace('user_', '');
-    var button = $('.builder .buttons .button[data-field="'+fieldId+'"]');
+    var fieldName = field.data('field');
+
+    var button = formBuilder._getButtonByName(fieldName);
 
     field.removeClass('on');
     button.removeClass('on');
+  },
+
+  _getFieldByName: function(element, fieldName) {
+    var field = element.find('.fields .field[data-field="'+fieldName+'"]');
+
+    return field;
+  },
+
+  _getButtonByName: function(fieldName) {
+    return $('.builder .buttons .button[data-field="'+fieldName+'"]');
   }
+
 };

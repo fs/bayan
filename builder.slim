@@ -6,24 +6,44 @@ html
     script type="text/javascript" src="jquery.js"
     script type="text/javascript" src="builder.js"
     script type="text/javascript" src="vasya.js"
+
     script type="text/javascript" src="application.js"
 
   body
-    .builder
+
+    .builder.friends
+      .buttons
+        .button    data-field="name" name
+        .button.on data-field="age" age
+        .button    data-field="gender" gender
+
+      .fields
+        .name.field data-field="name"
+          ' user name
+          .close &times;
+        .vozrast.field.on data-field="age"
+          ' user age
+          .close &times;
+        .gender.field data-field="gender"
+          ' user gender
+          .close &times;
+
+    hr
+
+    .builder.collegues
       .buttons
         .button data-field="name" name
         .button.on data-field="age" age
         .button data-field="gender" gender
 
       .fields
-        #user_name.field
+        .name.field
           ' user name
           .close &times;
-        #user_age.field.on
+        .age.field.on
           ' user age
           .close &times;
-        #user_gender.field
+        .gender.field
           ' user gender
           .close &times;
-
 
