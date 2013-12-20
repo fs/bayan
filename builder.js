@@ -17,7 +17,6 @@ var formBuilder = {
 
     var fieldName = button.data('field');
     var field = formBuilder._getFieldByName(element, fieldName);
-    console.log(fieldName, field);
 
     field.addClass('on');
   },
