@@ -1,7 +1,10 @@
 $(document).ready(function() {
   var friends = $('.builder.friends');
-  formBuilder.start(friends);
+  var formBuilderFriends = makeFormBuilderFor(friends);
+  // TODO: var formBuilderFriends = new FormBuilder(friends);
+  formBuilderFriends.start(friends);
 
   var collegues = $('.builder.collegues');
-  formBuilder.start(collegues);
+  var formBuilderCollegues = makeFormBuilderFor(collegues);
+  formBuilderCollegues.start(collegues);
 });
