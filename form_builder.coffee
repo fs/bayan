@@ -15,12 +15,14 @@ class FormBuilder
       formBuilder.closeClicked(el)
 
   buttonClicked: (button) ->
-    button.addClass 'on'
+    unless button.hasClass 'on'
+      button.addClass 'on'
 
-    fieldName = button.data 'field'
-    field = @_getFieldByName(fieldName)
+      fieldName = button.data 'field'
+      field = @_getFieldByName(fieldName).detach()
 
-    field.addClass 'on'
+      @element.find(".fields").append(field)
+      field.addClass 'on'
 
   closeClicked: (el) ->
     field = $(el).parent()
