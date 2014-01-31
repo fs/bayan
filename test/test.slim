@@ -1,0 +1,26 @@
+doctype html
+html
+  head
+    title Mocha Tests
+    link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/mocha/1.13.0/mocha.css"
+
+  body
+
+    #mocha
+
+    #fixture
+
+    script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/mocha/1.13.0/mocha.js"
+    script type="text/javascript" src="http://chaijs.com/chai.js"
+
+    script type="text/javascript" src="../jquery.js"
+    script type="text/javascript" src="../form_builder.js"
+
+    javascript:
+      mocha.setup('bdd');
+      window.expect = chai.expect;
+
+    script type="text/javascript" src="form_builder_test.js"
+
+    javascript:
+      mocha.run();
